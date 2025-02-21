@@ -1,0 +1,19 @@
+name: "Action"
+
+on:
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+jobs:
+  Upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          perfecto_token: "token"
+          artifact_name: "Artifact.*"
+          artifact_type: "zip/apk/apks/ipa"
+          artifact_target: "development"

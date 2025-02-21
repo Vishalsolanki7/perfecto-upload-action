@@ -1,0 +1,20 @@
+name: "Perfecto Upload Action"
+description: "Custom github action that uploads all valid file types to perfecto"
+
+inputs:
+  perfecto_token:
+    description: "The Perfecto token for authentication."
+    required: true
+  artifact_name:
+    description: "The name of the artifact to be uploaded."
+    required: true
+  artifact_type:
+    description: "The type of the artifact to upload."
+    required: true
+  artifact_target:
+    description: "The target destination in perfecto."
+    required: true
+
+runs:
+  using: "node16"
+  main: "dist/index.js"
