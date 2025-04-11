@@ -1,0 +1,16 @@
+name: Tags
+on: 
+  push:
+    tags:
+      - v1.0
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          perfecto_token: "token"
+          artifact_name: "Artifact.*"
+          artifact_type: "zip/apk/apks/ipa"
+          artifact_target: "development"
