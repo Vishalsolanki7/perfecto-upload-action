@@ -2,7 +2,7 @@ name: Tags
 on: 
   push:
     tags:
-      - v1.0.**
+      - nightly_build_**
 jobs: 
   build:
     runs-on: ubuntu-latest
