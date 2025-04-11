@@ -5,6 +5,7 @@ on:
       - nightly_build_**
 jobs: 
   build:
+    if: github.event.base_ref == 'ref/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
